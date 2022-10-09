@@ -1,0 +1,55 @@
+/*6. Faça um programa que receba duas notas de seis alunos, calcule e mostre
+(comando for):
+• A média aritmética das duas notas de cada aluno;
+• A mensagem que está na tabela a seguir:
+
+Média aritmética Mensagem
+
+• O total de alunos aprovados;
+• O total de alunos de exame;
+• Total de alunos reprovados;
+• A média da classe.*/
+
+package com.mycompany.questao6;
+
+import java.util.Scanner;
+
+public class Questao6 {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+      float n1, n2,media;
+      int aprovados=0, recuperacao=0, reprovados=0, mediaGeral=0;
+        
+       for(int x=0;x<6;x++){
+      
+        System.out.println("Digite primeira nota: ");
+        n1= teclado.nextFloat();
+        System.out.println("Digite segunda nota: ");
+        n2 = teclado.nextFloat();
+        media = (n1+n2)/2;
+        
+        mediaGeral += media;
+        
+        System.out.println("Sua média é de "+ media);{
+        
+        if(media >=7){
+            aprovados++;
+            System.out.println("Aprovado por nota");
+        } else if (media>= 3){
+            recuperacao++;
+            System.out.println("Em recuperação");
+        } else if ((media >=0) && (media<3)){
+            reprovados++;
+            System.out.println("Reprovado por nota");
+        }
+        
+    }
+   }
+       System.out.println("Número de Alunos aprovados: "+aprovados);
+       System.out.println("Número de Alunos em exame: "+recuperacao);
+       System.out.println("Número de Alunos reprovados: "+reprovados);
+       System.out.println("A média geral da turma foi: "+mediaGeral/6);
+
+ }
+}
