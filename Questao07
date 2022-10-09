@@ -1,0 +1,46 @@
+/*Uma pousada estipulou o preço da diária em R$ 40,00 e mais uma taxa de serviços
+diários de:
+• R$ 15,00, se o número de dias for menor que 10;
+• R$ 8,00, se o número de dias for maior ou igual a 10.
+Criar um programa em Java que informe o nome, o valor da conta de cada cliente e ao final o total arrecadado pela pousada. (Comando while)*/
+
+package com.mycompany.questao07;
+import java.util.Scanner;
+
+public class Questao07 {
+
+    public static void main(String[] args) {
+        double precodiaria = 40, diasamenos = 15.00, diasamais= 8.00, totaldias=0, totallucro=0;
+        int dias;
+        var fim_de_p = true;
+        var fim = "fim";
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        
+        while (fim_de_p) {
+            System.out.println("Digite o nome do cliente ou a palavra fim para finalizar o programa: ");
+            String nome = teclado.next();
+            
+            if (nome.equals(fim)){
+                fim_de_p = false;
+                
+            }else{
+                System.out.println("Digite quantos dias o cliente ficará hospedado: ");
+                dias = teclado.nextInt();
+
+                if(dias>=10){
+                    totallucro++;
+                    totaldias = (dias * diasamais);
+                    System.out.println("Total a ser pago é: "+ totaldias +" reais.");
+
+            }   else if(dias<=9){
+                    totallucro++;
+                    totaldias = (dias * diasamenos);
+                    System.out.println("Total a ser pago é: "+ totaldias+" reais.");
+    }  
+    }   
+    }
+        System.out.println("O lucro do hotel é de : "+totallucro*totaldias +" reais.");
+    }
+}
