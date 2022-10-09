@@ -1,0 +1,36 @@
+/*3. Uma empresa decidiu dar 20% de aumento aos funcionários cujos salários são
+inferiores a 500 reais. Escreva um programa que leia o salário de vários
+funcionários se mostre o valor do salário reajustado ou uma mensagem caso o
+funcionário não tenha direito ao aumento. O programa será encerrado quando se
+digitar “fim” para o nome do funcionário. (Comando while)*/
+package com.mycompany.questao03;
+
+import java.util.Scanner;
+
+public class Questao03 {
+    public static void main(String[] args) {
+        var fim_de_p = true;
+        var fim = "fim";
+        Scanner leitor = new Scanner(System.in);
+
+        while (fim_de_p) {
+            System.out.print("Digite o seu nome: ");
+            String nome = leitor.next();
+
+            if (nome.equals(fim)){
+                fim_de_p = false;
+
+            } else {
+                System.out.println("Digite o seu salário: ");
+                float salario = leitor.nextFloat();
+                if (salario < 500){
+                    float conta = salario * 0.2f;
+                    System.out.println("Seu reajuste é igual a: "+ conta);
+                } else {
+                    System.out.print("Você não tem direito ao reajuste!");
+                }
+            }
+        }
+
+    }
+}
