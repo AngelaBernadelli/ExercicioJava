@@ -1,0 +1,31 @@
+/*5. A prefeitura de João Pessoa abriu uma linha de crédito para os funcionários
+municipais. O valor máximo da prestação não poderá ultrapassar 30% do salário
+bruto. Fazer um algoritmo que permita entrar com o salário bruto e o valor da
+prestação e informar se o empréstimo pode ou não ser concedido. (comando if)*/
+
+package com.mycompany.questao05;
+
+import java.util.Scanner;
+
+public class Questao05 {
+
+    public static void main(String[] args) {
+           Scanner teclado = new Scanner(System.in);
+           System.out.print("Digite o seu salário: ");
+           float salario = teclado.nextFloat();
+
+           System.out.print("Digite o valor da prestação: ");
+           float prestacao = teclado.nextFloat();
+        
+           if ((salario * 0.3) > prestacao){
+               System.out.println("Empréstimo foi liberado");
+            
+           }else {
+              System.out.println("Empréstimo não foi liberado");    
+                
+        }
+    
+    }
+
+
+}
